@@ -442,7 +442,7 @@ const CH = [
 </ul>
 <p>당근모임에서는 아트워크를 만들 때도 저작권 문제를 짚습니다. 무료 이미지 생성 도구로 만든 커버라도 상업적 이용 조건을 다시 확인해야 하고, 특정 브랜드나 유명인의 이미지를 연상시키는 이미지는 피해야 합니다.</p>
 <p>서두르지 않는 것이 핵심입니다. 메타데이터 오류로 반려되면 재심사에 다시 며칠이 걸리고, 계획했던 발매일을 놓치는 경우가 가장 흔한 실수입니다.</p>
-<blockquote>2026년 9월 3일부터 수노에 <strong>다운로드 횟수 제한</strong>이 생겼습니다(Free 평생 7회, Pro 월 20회, Premier 월 60회). 발매용 원본 WAV 파일은 곡을 완성한 그 자리에서 바로 다운로드해 따로 보관해두세요. 나중에 유통사 신청 단계에서 다시 받으려다 한도가 소진돼 있으면 발매 일정이 밀릴 수 있습니다. 자세한 내용은 부록 E를 확인하세요.</blockquote>
+<blockquote>2026년 9월 3일부터 수노에 <strong>다운로드 횟수 제한</strong>이 생겼습니다(Free 평생 7회, Pro 월 20회, Premier 월 60회). 발매용 원본 WAV 파일은 곡을 완성한 그 자리에서 바로 다운로드해 따로 보관해두세요. 나중에 유통사 신청 단계에서 다시 받으려다 한도가 소진돼 있으면 발매 일정이 밀릴 수 있습니다. 자세한 내용은 부록 E를 확인하세요. 다운로드 횟수를 아예 쓰지 않고 곡을 저장하고 싶다면 부록 G의 "곡 녹음" 기능도 대안이 됩니다.</blockquote>
 `},
 {id:"11", part:2, title:"스트리밍 플랫폼에 발매하기", html:`
 <h1>스트리밍 플랫폼에 발매하기</h1>
@@ -599,7 +599,7 @@ const APX = [
 <tr><td>웹앱</td><td>스펙트럼 적용 영상 제작 웹앱</td><td><a href="https://spectrum-studio2026.vercel.app/" target="_blank" rel="noopener">spectrum-studio2026.vercel.app</a></td><td>완성곡에 오디오 스펙트럼 비주얼을 입혀 영상으로 만들 때 (12장 숏폼·유튜브 배포와 연결)</td></tr>
 <tr><td>도구</td><td>NotebookLM(Gemini Notebook)</td><td><a href="https://notebooklm.google/" target="_blank" rel="noopener">notebooklm.google</a></td><td>7장·부록 F에서 다루는 구글 공식 리서치 노트 도구</td></tr>
 <tr><td>확장 프로그램</td><td>YouTube to NotebookLM</td><td><a href="https://chromewebstore.google.com/detail/pnnlnelknnpdljlkabehdmiapniffdlo?utm_source=item-share-cb" target="_blank" rel="noopener">크롬 웹스토어</a></td><td>7장에서 쓰는 NotebookLM Web Importer와 동일한 확장 프로그램</td></tr>
-<tr><td>사이트</td><td>방구석</td><td><a href="https://bang-guseog.com/" target="_blank" rel="noopener">bang-guseog.com</a></td><td>당근모임에서 함께 소개하는 관련 사이트</td></tr>
+<tr><td>사이트</td><td>방구석</td><td><a href="https://bang-guseog.com/" target="_blank" rel="noopener">bang-guseog.com</a></td><td>당근모임 자체 제작 "방구석 Suno 다운로더" 계정 사이트. 사용법은 부록 G 참고</td></tr>
 </table></div>
 <p>이 목록은 당근모임 초대 페이지가 업데이트될 때마다 함께 갱신됩니다. 최신 목록은 항상 초대 페이지 원본을 기준으로 확인하세요.</p>
 <p>이 책의 본문과 부록은 앞으로도 모임에서 나온 새로운 사례와 함께 계속 업데이트될 예정입니다.</p>
@@ -688,6 +688,67 @@ const APX = [
 <tr><td>영상 연계</td><td>없음</td><td>Veo와 연계한 뮤직비디오 생성 지원</td></tr>
 </table></div>
 <p>이 책의 본문은 수노를 기준으로 쓰였지만, 당근모임에서는 Flow Music도 함께 실험하고 있습니다. 두 도구 모두 이 책 2부·3부의 발매·저작권·수익화 원칙(자신의 계정으로 만든 곡인지, 상업적 이용 조건이 무엇인지 확인하는 것)은 동일하게 적용됩니다. 도구가 하나 늘었다고 확인 절차를 건너뛰지 마세요.</p>
+`},
+{id:"G", title:"방구석 Suno 다운로더 사용설명서", html:`
+<p class="kicker">부록 G · 당근모임 자체 제작 도구</p>
+<h1>방구석 Suno 다운로더 사용설명서</h1>
+<p class="lead">7장에서는 Gemini Notebook과 엑셀로 프롬프트 파이프라인을 손으로 만드는 법을 다뤘습니다. <strong>방구석 Suno 다운로더</strong>는 그 과정 전체 — 프롬프트 기획, Suno 등록, 다운로드까지 — 를 하나의 프로그램 안에서 자동화한 PC 설치형(Windows) 도구입니다. bang-guseog.com 계정과 suno.com 계정만 있으면 바로 쓸 수 있습니다.</p>
+
+<h1 style="font-size:1.3em; margin-top:36px;">설치하기</h1>
+<ul class="checklist">
+<li>전달받은 링크에서 설치파일(zip)을 내려받아 압축을 푼다</li>
+<li><code>...Setup.exe</code> 파일을 더블클릭해 실행하고, 안내에 따라 "다음"을 눌러 진행한다</li>
+<li>파란 SmartScreen 경고 화면이 떠도 정상이다 — 사용자가 아직 많지 않은 신규 프로그램에 Windows가 붙이는 일반 안내일 뿐, 바이러스 감지가 아니다. "추가 정보" → "실행"을 누르면 설치가 이어진다</li>
+<li>설치가 끝나면 프로그램이 자동 실행된다. 다음부터는 바탕화면·시작 메뉴 아이콘으로 바로 실행한다</li>
+</ul>
+
+<h1 style="font-size:1.3em; margin-top:36px;">로그인 · Suno 계정 연결</h1>
+<p>프로그램 자체는 <strong>bang-guseog.com</strong> 계정으로 로그인합니다(구글 로그인 버튼을 누르는 순간 계정이 자동 생성되므로, 미리 웹사이트에 가입해둘 필요는 없습니다). 로그인 후 계정 상태가 아래 네 가지 중 하나로 표시됩니다.</p>
+<div class="table-scroll"><table>
+<tr><th>상태</th><th>의미</th></tr>
+<tr><td>승인 대기중</td><td>관리자 승인 전. 완료될 때까지 대기</td></tr>
+<tr><td>승인완료</td><td>정상 사용 가능. 승인 만료일(또는 "무제한") 표시</td></tr>
+<tr><td>접근 제한됨</td><td>이용 제한 계정. 관리자 문의</td></tr>
+<tr><td>사용 기간 만료</td><td>승인 기간 종료. 연장은 관리자 문의</td></tr>
+</table></div>
+<p>모든 기능은 여러분의 suno.com 로그인 정보를 그대로 씁니다. "Suno 사이트 열기"로 suno.com에 로그인한 뒤 "← 앱으로 돌아가기"를 누르고, 설정 탭에서 "suno.com에서 토큰 자동 추출"을 눌러 연결을 마칩니다.</p>
+<blockquote>이 인증은 시간이 지나면 만료될 수 있습니다. <strong>MP3는 되는데 WAV만 안 될 때</strong>는 대부분 이 인증 만료가 원인이니, 토큰을 다시 추출하세요.</blockquote>
+
+<h1 style="font-size:1.3em; margin-top:36px;">핵심 기능</h1>
+<div class="table-scroll"><table>
+<tr><th>탭</th><th>하는 일</th></tr>
+<tr><td>AI 생성·라이브러리</td><td>Gemini/ChatGPT로 제목·가사·스타일 프롬프트를 자동 생성해 Suno에 곧바로 등록. 구글 시트를 불러와 여러 곡을 한 번에 등록하는 기능도 지원</td></tr>
+<tr><td>스타일 라이브러리</td><td>Suno 인기곡에서 실제로 쓰인 스타일 태그를 장르별로 모아 보여주고, 태그를 그대로 복사해 쓸 수 있음</td></tr>
+<tr><td>일괄 다운로드</td><td>스캔 → 폴더 선택 → MP3·WAV·메타데이터·가사(추정 타임코드 포함) 순으로 일괄 저장</td></tr>
+<tr><td>곡 녹음</td><td>PC 설치형 전용. 재생 소리를 실시간으로 캡처해 저장 — 수노의 월간 다운로드 횟수를 전혀 쓰지 않음</td></tr>
+<tr><td>인사이트</td><td>전체 곡을 스캔해 창작 히트맵·업적·장르 탐색기 등 나의 창작 통계를 시각화</td></tr>
+<tr><td>설정</td><td>Suno 인증, bang-guseog.com 서버 연동, AI API 키(Gemini/ChatGPT) 관리</td></tr>
+</table></div>
+
+<p>프롬프트 자동 생성은 7장에서 다룬 다섯 요소(장르·무드·악기·보컬·템포)에 더해 BPM·조성(Key)·곡 구조 템플릿까지 세밀하게 지정할 수 있고, 여러 곡을 한 번에 만들 때 이 태그들을 "순서대로·랜덤·조합" 중 어떤 방식으로 곡마다 나눠줄지도 고를 수 있습니다. 이미 완성된 곡 목록이 있다면 구글 시트(A열 제목·B열 가사·C열 스타일)를 불러오는 쪽이, 매번 AI 응답을 기다리는 것보다 훨씬 빠릅니다.</p>
+
+<blockquote>
+<strong>등록 전 꼭 확인할 두 가지</strong><br>
+① suno.com 화면이 <strong>Advanced 모드</strong>인지 확인하세요. 제목·가사·스타일을 각각 입력하는 기능은 Advanced 모드에만 있어서, Simple 모드로 남아 있으면 "가사 입력창을 찾지 못했습니다" 오류가 납니다.<br>
+② Suno는 요금제별로 <strong>동시 생성 가능한 곡 개수</strong>에 한도가 있습니다(예: Pro 최대 10개). 이미 한도만큼 진행 중일 때 더 등록하면 초과분이 실패하니, 먼저 등록한 곡이 끝나길 기다렸다가 나머지를 등록하세요.
+</blockquote>
+
+<blockquote>
+<strong>곡 녹음은 9장의 다운로드 캡을 우회하는 실전 대안입니다.</strong> 2026년 9월 3일부터 시행된 수노의 다운로드 횟수 제한(Free 7회/Pro 20회/Premier 60회, 부록 E)은 "Unlock/다운로드" 행위에만 걸립니다. 곡 녹음 기능은 재생을 그대로 캡처하는 방식이라 이 횟수를 전혀 소모하지 않습니다. 다만 곡 길이만큼 실시간으로 진행되고 한 번에 한 곡씩만 처리된다는 점은 감안해야 합니다.
+</blockquote>
+
+<p>일괄 다운로드의 스캔·WAV 변환·서버 경유 다운로드 기능은 bang-guseog.com의 <strong>실버·골드 등급 계정</strong>에서만 쓸 수 있습니다. AI 프롬프트 자동 생성을 쓰려면 Gemini 또는 ChatGPT API 키가 필요하며, <strong>결제 수단이 연결된 키만</strong> 인증됩니다(완전 무료 키는 거부될 수 있음) — 다만 기본 모델(gemini-2.5-flash) 기준 곡 1곡의 프롬프트를 만드는 비용은 대개 1원도 안 되는 수준입니다.</p>
+
+<h1 style="font-size:1.3em; margin-top:36px;">자주 겪는 문제</h1>
+<ul class="checklist">
+<li>설치 중 파란 경고 화면 — 정상. "추가 정보" → "실행" 순서로 진행</li>
+<li>WAV만 다운로드 안 됨 — Suno 토큰 만료. 설정 탭에서 토큰 재추출</li>
+<li>"가사 입력창을 찾지 못했습니다" — suno.com이 Simple 모드인지 확인, Advanced로 전환</li>
+<li>여러 곡 등록 중 일부만 성공 — 요금제별 동시 생성 한도 초과. 진행 중인 곡이 끝난 뒤 재등록</li>
+<li>"실버·골드 등급만 이용 가능" 안내 — bang-guseog.com에서 계정 등급 확인</li>
+<li>AI API 키 테스트 실패 — 키에 결제 수단이 연결돼 있는지 확인</li>
+</ul>
+<p>이 도구는 문의·계정 관리를 bang-guseog.com에서 처리합니다. 부록 D의 링크 목록에서도 바로 찾을 수 있습니다.</p>
 `},
 ];
 
