@@ -160,6 +160,27 @@ a{color:inherit;}
 .content ul, .content ol{line-height:1.9; margin:0 0 20px; padding-left:1.3em;}
 .content li{margin-bottom:8px;}
 .content strong{color:var(--accent); font-weight:700;}
+.copy-box{
+  display:flex; align-items:flex-start; gap:14px; margin:20px 0; padding:16px 18px;
+  background:var(--content-card); border:1px solid var(--content-border); border-left:4px solid var(--accent);
+  border-radius:4px;
+}
+.copy-box .copy-text{
+  flex:1; min-width:0; font-family:var(--font-serif); font-size:1.02em; line-height:1.8;
+  color:var(--content-fg); white-space:pre-wrap; word-break:keep-all;
+}
+.copy-btn{
+  flex-shrink:0; display:flex; align-items:center; gap:6px; background:var(--content-bg);
+  border:1px solid var(--content-border); color:var(--content-muted); border-radius:8px;
+  padding:7px 12px; font-size:12.5px; font-weight:700; white-space:nowrap;
+}
+.copy-btn:hover{border-color:var(--accent); color:var(--accent);}
+.copy-btn.copied{border-color:var(--accent); color:var(--accent); background:color-mix(in srgb, var(--accent) 12%, transparent);}
+.copy-btn svg{width:14px; height:14px; flex-shrink:0;}
+@media (max-width:520px){
+  .copy-box{flex-direction:column; align-items:stretch; gap:10px;}
+  .copy-btn{justify-content:center;}
+}
 .table-scroll{overflow-x:auto; -webkit-overflow-scrolling:touch; margin:8px 0 24px; border-radius:4px;}
 .content table{width:100%; min-width:560px; border-collapse:collapse; font-size:.92em; margin:0;}
 .content th,.content td{border:1px solid var(--content-border); padding:10px 12px; text-align:left; line-height:1.6; word-break:keep-all; overflow-wrap:break-word;}
@@ -324,7 +345,16 @@ const CH = [
 <li><strong>보컬 특징</strong> — 성별, 톤, 창법(breathy female vocal, powerful male belt 등)</li>
 <li><strong>템포/에너지</strong> — 느린 발라드인지, 업템포 댄스인지</li>
 </ul>
-<p>예시: <em>"90s city pop, nostalgic and warm, electric piano and fretless bass, breathy female vocal, mid-tempo"</em> 같은 식으로 다섯 요소를 이어 붙이면, 매번 비슷한 방향의 결과물이 나옵니다.</p>
+<p>예시로 다섯 요소를 이어 붙이면 아래와 같은 프롬프트가 됩니다. 복사 버튼으로 그대로 가져가 수노에 붙여넣어도 됩니다.</p>
+<div class="copy-box">
+<div class="copy-text">90s city pop, nostalgic and warm, electric piano and fretless bass, breathy female vocal, mid-tempo</div>
+<button class="copy-btn" data-copy="90s city pop, nostalgic and warm, electric piano and fretless bass, breathy female vocal, mid-tempo">
+<svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+<svg class="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" hidden><path d="M20 6 9 17l-5-5"/></svg>
+<span class="copy-label">복사</span>
+</button>
+</div>
+<p>이런 식으로 매번 비슷한 방향의 결과물이 나옵니다.</p>
 <blockquote>프롬프트는 정답을 맞히는 게 아니라, 실패의 범위를 좁히는 작업입니다.</blockquote>
 <p>한 번에 완벽한 결과를 기대하기보다, 같은 프롬프트에서 두세 개 버전을 뽑아 비교하는 습관을 들이는 것이 훨씬 효율적입니다. 이 방법은 6장에서 이어서 다룹니다.</p>
 `},
@@ -381,7 +411,14 @@ const CH = [
 
 <h1 style="font-size:1.3em; margin-top:36px;">3단계 · 제목·가사·스타일 프롬프트 최대한 많이 뽑아내기</h1>
 <p>소스가 쌓였다면, 채팅창에 원하는 방향과 개수를 구체적으로 요청합니다. 예시:</p>
-<blockquote>"방금 넣은 소스들의 분위기를 참고해서, [원하는 장르/무드]에 맞는 곡 제목 10개, 각 제목에 어울리는 수노 스타일 프롬프트(장르·무드·악기·보컬·템포 포함), 그리고 후렴 한 줄씩을 표로 정리해줘"</p>
+<div class="copy-box">
+<div class="copy-text">방금 넣은 소스들의 분위기를 참고해서, [원하는 장르/무드]에 맞는 곡 제목 10개, 각 제목에 어울리는 수노 스타일 프롬프트(장르·무드·악기·보컬·템포 포함), 그리고 후렴 한 줄씩을 표로 정리해줘</div>
+<button class="copy-btn" data-copy="방금 넣은 소스들의 분위기를 참고해서, [원하는 장르/무드]에 맞는 곡 제목 10개, 각 제목에 어울리는 수노 스타일 프롬프트(장르·무드·악기·보컬·템포 포함), 그리고 후렴 한 줄씩을 표로 정리해줘">
+<svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+<svg class="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" hidden><path d="M20 6 9 17l-5-5"/></svg>
+<span class="copy-label">복사</span>
+</button>
+</div>
 <p>한 번에 마음에 드는 결과가 안 나와도 괜찮습니다. "더 밝은 느낌으로 5개 더", "3번 방향으로 제목만 다르게 5개 더"처럼 이어서 요청하면 같은 방향 안에서 후보가 계속 늘어납니다. 이렇게 모은 후보를 표 형태로 쌓아두는 것이 다음 단계의 핵심입니다.</p>
 <div class="table-scroll"><table>
 <tr><th>번호</th><th>제목(안)</th><th>스타일 프롬프트</th><th>후렴 한 줄</th></tr>
@@ -770,7 +807,14 @@ const APX = [
 <li><strong>레퍼런스 유튜브 영상 찾기</strong> — 새 탭에서 만들고 싶은 곡과 분위기가 비슷한 유튜브 영상을 하나 재생합니다(예: 좋아하는 노래, 원하는 무드의 플레이리스트 영상).</li>
 <li><strong>영상을 소스로 가져오기</strong> — 그 유튜브 탭에서 방금 설치한 확장 프로그램 아이콘을 클릭하고, 1번에서 만든 노트북을 선택합니다. 잠시 기다리면 그 영상이 Gemini Notebook의 소스 목록에 추가됩니다.</li>
 <li><strong>채팅으로 요청하기</strong> — Gemini Notebook 채팅창에 아래 문장을 그대로(또는 [ ] 부분만 바꿔서) 입력합니다.
-<blockquote>"방금 넣은 소스의 분위기를 참고해서, [원하는 장르나 느낌, 예: 잔잔한 어쿠스틱 발라드]에 맞는 곡 제목 3개, 각 제목에 어울리는 수노(Suno) 스타일 프롬프트, 그리고 짧은 가사 한 곡 분량을 만들어줘"</blockquote>
+<div class="copy-box">
+<div class="copy-text">방금 넣은 소스의 분위기를 참고해서, [원하는 장르나 느낌, 예: 잔잔한 어쿠스틱 발라드]에 맞는 곡 제목 3개, 각 제목에 어울리는 수노(Suno) 스타일 프롬프트, 그리고 짧은 가사 한 곡 분량을 만들어줘</div>
+<button class="copy-btn" data-copy="방금 넣은 소스의 분위기를 참고해서, [원하는 장르나 느낌, 예: 잔잔한 어쿠스틱 발라드]에 맞는 곡 제목 3개, 각 제목에 어울리는 수노(Suno) 스타일 프롬프트, 그리고 짧은 가사 한 곡 분량을 만들어줘">
+<svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+<svg class="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" hidden><path d="M20 6 9 17l-5-5"/></svg>
+<span class="copy-label">복사</span>
+</button>
+</div>
 </li>
 <li><strong>결과에서 하나 고르기</strong> — AI가 만들어준 제목·스타일 프롬프트·가사 중 가장 마음에 드는 조합 하나를 메모장이나 문서에 복사해둡니다. (마음에 드는 게 없으면 "다른 느낌으로 3개 더"라고 이어서 요청하면 됩니다.)</li>
 </ol>
@@ -929,6 +973,76 @@ document.documentElement.setAttribute('data-theme', state.theme);
 document.documentElement.style.setProperty('--step', state.step);
 document.querySelectorAll('.theme-dot').forEach(x=>x.classList.toggle('active', x.dataset.t===state.theme));
 document.querySelectorAll('.font-btn').forEach(x=>x.classList.toggle('active', parseInt(x.dataset.step,10)===state.step));
+
+function fallbackCopy(text){
+  try{
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    ta.style.top = '0';
+    ta.style.left = '0';
+    document.body.appendChild(ta);
+    ta.focus(); ta.select();
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  }catch(err){ return false; }
+}
+
+async function copyToClipboard(text){
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    const withTimeout = (p, ms) => new Promise((resolve, reject) => {
+      const t = setTimeout(()=>reject(new Error('timeout')), ms);
+      p.then(v=>{ clearTimeout(t); resolve(v); }, e=>{ clearTimeout(t); reject(e); });
+    });
+    try{
+      await withTimeout(navigator.clipboard.writeText(text), 800);
+      return true;
+    }catch(err){ /* fall through to legacy copy */ }
+  }
+  return fallbackCopy(text);
+}
+
+function selectCopyText(btn){
+  const box = btn.closest('.copy-box');
+  const textEl = box && box.querySelector('.copy-text');
+  if(!textEl) return false;
+  try{
+    const range = document.createRange();
+    range.selectNodeContents(textEl);
+    const sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    return true;
+  }catch(err){ return false; }
+}
+
+document.addEventListener('click', async (e)=>{
+  const btn = e.target.closest('.copy-btn');
+  if(!btn) return;
+  const text = btn.dataset.copy || '';
+  const ok = await copyToClipboard(text);
+  const iconCopy = btn.querySelector('.ic-copy');
+  const iconCheck = btn.querySelector('.ic-check');
+  const label = btn.querySelector('.copy-label');
+  btn.classList.add('copied');
+  if(ok){
+    if(iconCopy) iconCopy.hidden = true;
+    if(iconCheck) iconCheck.hidden = false;
+    if(label) label.textContent = '복사됨';
+  } else {
+    selectCopyText(btn);
+    if(label) label.textContent = '직접 Ctrl+C';
+  }
+  clearTimeout(btn._copyTimer);
+  btn._copyTimer = setTimeout(()=>{
+    btn.classList.remove('copied');
+    if(iconCopy) iconCopy.hidden = false;
+    if(iconCheck) iconCheck.hidden = true;
+    if(label) label.textContent = '복사';
+  }, ok ? 1600 : 3000);
+});
 
 render();
 </script>
