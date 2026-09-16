@@ -208,16 +208,18 @@ a{color:inherit;}
 .nav-btn:disabled{opacity:.35; pointer-events:none;}
 
 @media (max-width:900px){
-  .sidebar{position:fixed; left:0; top:0; transform:translateX(-100%); width:min(92vw,420px); box-shadow:0 0 40px rgba(0,0,0,.4);}
+  .sidebar{position:fixed; left:0; top:0; bottom:0; height:auto; transform:translateX(-100%); width:min(92vw,420px); box-shadow:0 0 40px rgba(0,0,0,.4); overflow-y:auto; transition:transform .35s cubic-bezier(.32,.94,.6,1);}
   .sidebar.open{transform:translateX(0);}
   .sidebar-close{display:block; margin-left:auto; background:transparent; border:0; color:var(--sidebar-muted); font-size:24px; width:40px; height:40px;}
   .menu-btn{display:flex;}
-  .scrim{position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:30; opacity:0; pointer-events:none; transition:opacity .2s;}
+  .scrim{position:fixed; inset:0; background:rgba(0,0,0,.6); z-index:30; opacity:0; pointer-events:none; transition:opacity .3s;}
   .scrim.show{opacity:1; pointer-events:auto;}
   .tool-group.theme-group{display:none;}
   .menu-btn{width:40px; height:40px;}
   .ch-item{padding:10px; font-size:14px;}
   .font-btn{padding:8px 10px; font-size:12.5px;}
+  .toc-scroll{flex:none; overflow-y:visible; margin:0; padding:0;}
+  .progress-wrap{margin-top:18px;}
 }
 @media (max-width:520px){
   .content{padding-top:32px; font-size:calc(15.5px + var(--step) * 1.5px);}
