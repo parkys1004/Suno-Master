@@ -980,7 +980,11 @@ function render(){
 }
 
 document.querySelectorAll('.tab-btn').forEach(b=>{
-  b.addEventListener('click', ()=>{ state.tab = b.dataset.tab; renderTOC(); });
+  b.addEventListener('click', ()=>{
+    state.tab = b.dataset.tab;
+    document.querySelectorAll('.tab-btn').forEach(x=>x.classList.toggle('active', x===b));
+    renderTOC();
+  });
 });
 el.tocSearch.addEventListener('input', e=>{ state.query = e.target.value; renderTOC(); });
 
